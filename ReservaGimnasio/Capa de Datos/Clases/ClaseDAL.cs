@@ -47,7 +47,38 @@ namespace ReservaGimnasio.Capa_de_Datos.Clases
                 return false;
             }
         }
+        public DataTable FiltrarClasePorDia_Entrenador_Salon(string _dia, string _nombreEntrenador, string _salon)
+        {
+            DataTable dt = new DataTable();
 
+            try
+            {
+                ConexionDAL con = new ConexionDAL();
+
+                using (SqlCommand cmd = new SqlCommand("sp_Filtrar", con.AbrirConexion()))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Dia", _dia);
+                    cmd.Parameters.AddWithValue("@Entrenador", _nombreEntrenador);
+                    cmd.Parameters.AddWithValue("@Salon", _salon);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt); // Llena el DataTable con los datos
+                    }
+                }
+
+                con.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener los datos: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return dt;
+        }
         public DataTable MostrarTodasClases()
         {
             DataTable dt = new DataTable();

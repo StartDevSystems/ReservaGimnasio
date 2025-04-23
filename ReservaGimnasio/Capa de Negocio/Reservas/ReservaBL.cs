@@ -23,20 +23,18 @@ namespace ReservaGimnasio.Capa_de_Negocio
         public bool GuardarReserva(ReservaEnti reserva)
         {
             // 1. Validaciones básicas de la entidad
-            if (reserva == null)
+            if (reserva.IdUsuario == 0)
                 throw new ArgumentNullException(nameof(reserva), "La información de la reserva no puede ser nula.");
-            if (string.IsNullOrWhiteSpace(reserva.NombreCliente))
-                throw new Exception("El nombre del cliente es obligatorio.");
+            if (reserva.IdClase==0)
+                throw new Exception("El id del clase es obligatorio.");
             if (reserva.IdClase <= 0)
                 throw new Exception("Debe seleccionar una clase válida.");
-            if (reserva.FechaReserva.Date < DateTime.Today) // Comparar solo la fecha
+            if (reserva.FechaClase.Date < DateTime.Today) // Comparar solo la fecha
                 throw new Exception("No se puede reservar para una fecha pasada.");
-            if (string.IsNullOrWhiteSpace(reserva.HoraReserva))
+            if (string.IsNullOrWhiteSpace(reserva.Horario))
                 throw new Exception("Debe seleccionar un horario.");
-            if (string.IsNullOrWhiteSpace(reserva.Estado))
-                reserva.Estado = "Activa"; // Asignar estado por defecto si no viene
-            if (reserva.FechaHoraCreacion == default(DateTime))
-                reserva.FechaHoraCreacion = DateTime.Now; // Asignar fecha de creación
+            if (reserva.FechaRegistroActual== default(DateTime))
+                reserva.FechaRegistroActual = DateTime.Now; // Asignar fecha de creación
 
             // 2. Validación de Negocio: Verificar Cupo
             int capacidadMaxima = claseDAL.ObtenerCapacidadClase(reserva.IdClase); // ¡ASEGÚRATE QUE ESTE MÉTODO EXISTA EN ClaseDAL!
@@ -46,11 +44,11 @@ namespace ReservaGimnasio.Capa_de_Negocio
                 throw new Exception($"No se pudo obtener una capacidad válida para la clase seleccionada (ID: {reserva.IdClase}).");
             }
 
-            int reservasActuales = reservaDAL.ContarReservasPorClaseYFechaHora(reserva.IdClase, reserva.FechaReserva, reserva.HoraReserva);
+            int reservasActuales = reservaDAL.ContarReservasPorClaseYFechaHora(reserva.IdClase, reserva.FechaClase, reserva.Horario);
 
             if (reservasActuales >= capacidadMaxima)
             {
-                throw new Exception($"No hay cupo disponible para la clase '{reserva.IdClase}' en la fecha y hora seleccionadas ({reserva.FechaReserva.ToShortDateString()} {reserva.HoraReserva}). Cupo: {reservasActuales}/{capacidadMaxima}");
+                throw new Exception($"No hay cupo disponible para la clase '{reserva.IdClase}' en la fecha y hora seleccionadas ({reserva.FechaClase.ToShortDateString()} {reserva.Horario}). Cupo: {reservasActuales}/{capacidadMaxima}");
             }
 
             // 3. (Opcional) Validación adicional: ¿Cliente ya tiene reserva a esa hora?

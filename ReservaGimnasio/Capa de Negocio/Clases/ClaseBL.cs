@@ -46,10 +46,24 @@ namespace ReservaGimnasio.Capa_de_Negocio
         {
             return claseDAL.MostrarTodasClases();
         }
+        public DataTable AccionarFiltroDia_Entrenador_Salon(string dia, string entrenador, string salon)
+        {
+            DataTable data= claseDAL.FiltrarClasePorDia_Entrenador_Salon(dia, entrenador, salon);
+            if (data.Rows.Count > 0 || data==null)
+            {
+                throw new Exception("Ha ocurrido un error inesperado, durante la ejecucion del filtro");
+            }
+            return data;
+        }
 
         public DataTable BuscarPorNombre(string nombre)
         {
-            return claseDAL.BuscarPorNombre(nombre);
+           DataTable data= claseDAL.BuscarPorNombre(nombre);
+            if (data == null) {
+                throw new Exception("Ha ocurrido un error inesperado, durante la Busqueda de clase por nombre");
+
+            }
+            return data;
         }
 
         public bool ModificarClase(int id, ClaseEnti clase)

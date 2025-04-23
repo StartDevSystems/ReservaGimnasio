@@ -28,18 +28,15 @@ namespace ReservaGimnasio.Capa_de_Datos
                 {
                     // Asumiendo que tienes un Stored Procedure llamado sp_InsertarReserva
                     // Si no, puedes usar un INSERT INTO directo, pero SP es más seguro y organizado.
-                    using (SqlCommand cmd = new SqlCommand("sp_InsertarReserva", conn))
+                    using (SqlCommand cmd = new SqlCommand("usp_RegistrarReservaClase", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-
                         // Asegúrate que los nombres de parámetros coincidan con tu SP
-                        cmd.Parameters.AddWithValue("@NombreCliente", reserva.NombreCliente);
+                        cmd.Parameters.AddWithValue("@IdUsuario", reserva.IdUsuario);
                         cmd.Parameters.AddWithValue("@IdClase", reserva.IdClase);
-                        cmd.Parameters.AddWithValue("@FechaReserva", reserva.FechaReserva.Date); // Guarda solo la fecha
-                        cmd.Parameters.AddWithValue("@HoraReserva", reserva.HoraReserva);
-                        cmd.Parameters.AddWithValue("@Estado", reserva.Estado);
-                        cmd.Parameters.AddWithValue("@FechaHoraCreacion", reserva.FechaHoraCreacion);
-
+                        cmd.Parameters.AddWithValue("@FechaClase", reserva.FechaClase); // Guarda solo la fecha
+                        cmd.Parameters.AddWithValue("@Horario", reserva.Horario);
+                        cmd.Parameters.AddWithValue("@NombreLugarSala", reserva.NombreLugarSala);
                         cmd.ExecuteNonQuery();
                         return true; // Se ejecutó sin errores
                     }

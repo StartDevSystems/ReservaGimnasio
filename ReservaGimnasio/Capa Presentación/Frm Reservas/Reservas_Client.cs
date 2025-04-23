@@ -37,75 +37,38 @@ namespace ReservaGimnasio.Capa_Presentación.Frm_Reservas
             if (dgvClasesDisponibles.Columns.Contains("Salon")) dgvClasesDisponibles.Columns["Salon"].HeaderText = "Salón";
         }
 
-        private void btnFiltrar_Click(object sender, EventArgs e)
+        private void btnFiltrar_Click_1(object sender, EventArgs e)
         {
             // Aquí iría la lógica para filtrar las clases
+            //NECESITO los dias,el entrenador y el tipo
+           var itemDia = cmbDia.Text;
+           var itemEntrenador= cmbEntrenador.Text;
+           var itemSalon= cmbTipoClase.Text;
+            if (string.IsNullOrWhiteSpace(itemDia) || string.IsNullOrWhiteSpace(itemEntrenador) || string.IsNullOrWhiteSpace(itemSalon))
+            {
+                MessageBox.Show("Todos los campos son requeridos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var data = claseBL.AccionarFiltroDia_Entrenador_Salon(itemDia, itemEntrenador,itemSalon);
+            dgvClasesDisponibles.DataSource = data;
         }
-
-        private void dgvClasesDisponibles_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Aquí iría la lógica para mostrar los detalles al hacer clic
-        }
-
+        //SELECIONAMOS LA CLASE luego cargamos lo datos de la clase y confirmamos la reservacion con esos datos
         private void btnConfirmarReserva_Click(object sender, EventArgs e)
         {
-            // Aquí iría la lógica para confirmar la reserva
+
         }
 
         private void dgvClasesDisponibles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        }
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvClasesDisponibles.Rows[e.RowIndex];
+          
 
-        private void cmbDia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+                 
+            }
 
-        private void cmbEntrenador_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
 
-        private void cmbTipoClase_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void btnFiltrar_Click_1(object sender, EventArgs e)
-        {
-        }
-
-        private void pnlDetallesClase_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void btnConfirmarReserva_Click_1(object sender, EventArgs e)
-        {
-        }
-
-        private void lblClaseNombre_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lblHorario_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lblEntrenador_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lblSalon_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lblDuracion_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lblDisponibilidad_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lblFecha_Click(object sender, EventArgs e)
-        {
         }
     }
 }
