@@ -22,7 +22,7 @@ namespace ReservaGimnasio.Capa_Presentación.Frm_Reservas
 
         private void CargarCombos()
         {
-            var listaDias = new List<string>(new[] { "Lunes, Martes, Miercoles, Jueves, Viernes" }).ToArray();
+            var listaDias = new List<string>(new[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" }).ToArray();
             var listadoEntrenadores = new List<string>(new[] { "Rocky Balboa", "El Depredador", "Jose Luis", "Castor Troy", "John Clements", "Jonathan travolta", "Yordi el NiñoP" }).ToArray();
             var listadoArea = new List<string>( new[] { "CrossFit", "HIIT (High-Intensity Interval Training", "Circuitos, Pesas libres", "Máquinas de musculación", "Powerlifting", "Spinning", "Step aeróbico", "Caminadora", "Elípticas" }).ToArray();
 
