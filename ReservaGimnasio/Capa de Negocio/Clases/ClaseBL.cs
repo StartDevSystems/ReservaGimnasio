@@ -49,7 +49,7 @@ namespace ReservaGimnasio.Capa_de_Negocio
         public DataTable AccionarFiltroDia_Entrenador_Salon(string dia, string entrenador, string salon)
         {
             DataTable data= claseDAL.FiltrarClasePorDia_Entrenador_Salon(dia, entrenador, salon);
-            if (data.Rows.Count > 0 || data==null)
+            if (data==null)
             {
                 throw new Exception("Ha ocurrido un error inesperado, durante la ejecucion del filtro");
             }
