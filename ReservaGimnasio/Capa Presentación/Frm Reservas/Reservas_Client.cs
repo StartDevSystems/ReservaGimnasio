@@ -161,7 +161,6 @@ private void dgvClasesDisponibles_CellContentClick(object sender, DataGridViewCe
         }
     }
 
-    // --- Make sure you have declared the event handler in your Form's constructor ---
     // or in the InitializeComponent method (which your designer file already does):
     // this.dgvClasesDisponibles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesDisponibles_CellContentClick);
 
