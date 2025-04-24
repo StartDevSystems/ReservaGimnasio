@@ -209,6 +209,7 @@
             this.cmbDia.Name = "cmbDia";
             this.cmbDia.Size = new System.Drawing.Size(102, 29);
             this.cmbDia.TabIndex = 2;
+
              // 
             // lblDia
             // 
