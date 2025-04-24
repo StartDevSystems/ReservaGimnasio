@@ -55,7 +55,7 @@ namespace ReservaGimnasio.Capa_de_Datos.Clases
             {
                 ConexionDAL con = new ConexionDAL();
 
-                using (SqlCommand cmd = new SqlCommand("sp_Filtrar", con.AbrirConexion()))
+                using (SqlCommand cmd = new SqlCommand("usp_RegistrarReservaClase", con.AbrirConexion()))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
