@@ -158,9 +158,8 @@ namespace Principal
         private void btnvolver_login_Click(object sender, EventArgs e)
         {
             Login login = new Login();
-            this.Close();
             login.Show();
-
+           this.Close();
         }
     }
 }
