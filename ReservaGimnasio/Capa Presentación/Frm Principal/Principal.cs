@@ -1,4 +1,5 @@
-﻿using ReservaGimnasio.Capa_Presentación;
+﻿using ReservaGimnasio;
+using ReservaGimnasio.Capa_Presentación;
 using ReservaGimnasio.Capa_Presentación.Frm_Administración;
 using ReservaGimnasio.Capa_Presentación.Frm_de_Usuarios;
 using ReservaGimnasio.Capa_Presentación.Frm_Reporte_y_Estadistica;
@@ -156,7 +157,10 @@ namespace Principal
 
         private void btnvolver_login_Click(object sender, EventArgs e)
         {
-            
+            Login login = new Login();
+            this.Close();
+            login.Show();
+
         }
     }
 }

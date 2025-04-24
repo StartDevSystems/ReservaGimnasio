@@ -70,11 +70,7 @@ namespace ReservaGimnasio.Capa_Presentación.Frm_Reservas
             var data = claseBL.AccionarFiltroDia_Entrenador_Salon(itemDia, itemEntrenador,itemSalon);
             dgvClasesDisponibles.DataSource = data;
         }
-        //SELECIONAMOS LA CLASE luego cargamos lo datos de la clase y confirmamos la reservacion con esos datos
-        private void btnConfirmarReserva_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
 
 // Make sure this is inside your Reservas_Client class
@@ -166,7 +162,7 @@ private void dgvClasesDisponibles_CellContentClick(object sender, DataGridViewCe
 
     private void btnConfirmarReserva_Click_1(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Reserva Realizada");
         }
     }
 }
