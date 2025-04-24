@@ -59,7 +59,7 @@ namespace ReservaGimnasio.Capa_de_Datos.Clases
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@Dia", _dia);
+                    cmd.Parameters.AddWithValue("@Dias", _dia);
                     cmd.Parameters.AddWithValue("@Entrenador", _nombreEntrenador);
                     cmd.Parameters.AddWithValue("@Salon", _salon);
 
