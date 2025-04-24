@@ -28,23 +28,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Salon;
         private System.Windows.Forms.DataGridViewButtonColumn btnReservar;
         private System.Windows.Forms.Label lblClasesDisponibles;
-        private System.Windows.Forms.Panel pnlDetallesClase;
         private System.Windows.Forms.Button btnConfirmarReserva;
-        private System.Windows.Forms.Label lblDisponibilidad;
-        private System.Windows.Forms.Label lblDisponibilidadLabel;
-        private System.Windows.Forms.Label lblSalon;
-        private System.Windows.Forms.Label lblSalonLabel;
-        private System.Windows.Forms.Label lblDuracion;
-        private System.Windows.Forms.Label lblDuracionLabel;
-        private System.Windows.Forms.Label lblHorario;
-        private System.Windows.Forms.Label lblHorarioLabel;
-        private System.Windows.Forms.Label lblEntrenador;
-        private System.Windows.Forms.Label lblEntrenadorLabel;
-        private System.Windows.Forms.Label lblClaseNombre;
-        private System.Windows.Forms.Label lblClaseNombreLabel;
-        private System.Windows.Forms.Label lblDetalles;
-        private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label lblFechaLabel;
         // --- Fin de la declaración de controles ---
 
         /// <summary>
@@ -91,26 +75,9 @@
             this.Salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReservar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblClasesDisponibles = new System.Windows.Forms.Label();
-            this.pnlDetallesClase = new System.Windows.Forms.Panel();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.lblFechaLabel = new System.Windows.Forms.Label();
             this.btnConfirmarReserva = new System.Windows.Forms.Button();
-            this.lblDisponibilidad = new System.Windows.Forms.Label();
-            this.lblDisponibilidadLabel = new System.Windows.Forms.Label();
-            this.lblSalon = new System.Windows.Forms.Label();
-            this.lblSalonLabel = new System.Windows.Forms.Label();
-            this.lblDuracion = new System.Windows.Forms.Label();
-            this.lblDuracionLabel = new System.Windows.Forms.Label();
-            this.lblHorario = new System.Windows.Forms.Label();
-            this.lblHorarioLabel = new System.Windows.Forms.Label();
-            this.lblEntrenador = new System.Windows.Forms.Label();
-            this.lblEntrenadorLabel = new System.Windows.Forms.Label();
-            this.lblClaseNombre = new System.Windows.Forms.Label();
-            this.lblClaseNombreLabel = new System.Windows.Forms.Label();
-            this.lblDetalles = new System.Windows.Forms.Label();
             this.panelFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasesDisponibles)).BeginInit();
-            this.pnlDetallesClase.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -165,7 +132,6 @@
             this.cmbTipoClase.Name = "cmbTipoClase";
             this.cmbTipoClase.Size = new System.Drawing.Size(131, 29);
             this.cmbTipoClase.TabIndex = 6;
-          //  this.cmbTipoClase.SelectedIndexChanged += new System.EventHandler(this.cmbTipoClase_SelectedIndexChanged);
             // 
             // lblTipoClase
             // 
@@ -177,7 +143,6 @@
             this.lblTipoClase.Size = new System.Drawing.Size(65, 23);
             this.lblTipoClase.TabIndex = 5;
             this.lblTipoClase.Text = "Salon:";
-            //this.lblTipoClase.Click += new System.EventHandler(this.lblTipoClase_Click);
             // 
             // cmbEntrenador
             // 
@@ -188,7 +153,7 @@
             this.cmbEntrenador.Name = "cmbEntrenador";
             this.cmbEntrenador.Size = new System.Drawing.Size(126, 29);
             this.cmbEntrenador.TabIndex = 4;
-             // 
+            // 
             // lblEntrenadorFiltro
             // 
             this.lblEntrenadorFiltro.AutoSize = true;
@@ -209,8 +174,7 @@
             this.cmbDia.Name = "cmbDia";
             this.cmbDia.Size = new System.Drawing.Size(102, 29);
             this.cmbDia.TabIndex = 2;
-
-             // 
+            // 
             // lblDia
             // 
             this.lblDia.AutoSize = true;
@@ -371,56 +335,6 @@
             this.lblClasesDisponibles.TabIndex = 2;
             this.lblClasesDisponibles.Text = "Clases Disponibles:";
             // 
-            // pnlDetallesClase
-            // 
-            this.pnlDetallesClase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(244)))), ((int)(((byte)(255)))));
-            this.pnlDetallesClase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDetallesClase.Controls.Add(this.lblFecha);
-            this.pnlDetallesClase.Controls.Add(this.lblFechaLabel);
-            this.pnlDetallesClase.Controls.Add(this.btnConfirmarReserva);
-            this.pnlDetallesClase.Controls.Add(this.lblDisponibilidad);
-            this.pnlDetallesClase.Controls.Add(this.lblDisponibilidadLabel);
-            this.pnlDetallesClase.Controls.Add(this.lblSalon);
-            this.pnlDetallesClase.Controls.Add(this.lblSalonLabel);
-            this.pnlDetallesClase.Controls.Add(this.lblDuracion);
-            this.pnlDetallesClase.Controls.Add(this.lblDuracionLabel);
-            this.pnlDetallesClase.Controls.Add(this.lblHorario);
-            this.pnlDetallesClase.Controls.Add(this.lblHorarioLabel);
-            this.pnlDetallesClase.Controls.Add(this.lblEntrenador);
-            this.pnlDetallesClase.Controls.Add(this.lblEntrenadorLabel);
-            this.pnlDetallesClase.Controls.Add(this.lblClaseNombre);
-            this.pnlDetallesClase.Controls.Add(this.lblClaseNombreLabel);
-            this.pnlDetallesClase.Controls.Add(this.lblDetalles);
-            this.pnlDetallesClase.Location = new System.Drawing.Point(50, 430);
-            this.pnlDetallesClase.Name = "pnlDetallesClase";
-            this.pnlDetallesClase.Size = new System.Drawing.Size(720, 150);
-            this.pnlDetallesClase.TabIndex = 4;
-            //this.pnlDetallesClase.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDetallesClase_Paint);
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Arial", 9F);
-            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblFecha.Location = new System.Drawing.Point(140, 87);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(70, 21);
-            this.lblFecha.TabIndex = 16;
-            this.lblFecha.Text = "[Fecha]";
-            //this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
-            // 
-            // lblFechaLabel
-            // 
-            this.lblFechaLabel.AutoSize = true;
-            this.lblFechaLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblFechaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblFechaLabel.Location = new System.Drawing.Point(57, 87);
-            this.lblFechaLabel.Name = "lblFechaLabel";
-            this.lblFechaLabel.Size = new System.Drawing.Size(70, 21);
-            this.lblFechaLabel.TabIndex = 15;
-            this.lblFechaLabel.Text = "Fecha:";
-            //this.lblFechaLabel.Click += new System.EventHandler(this.lblFechaLabel_Click);
-            // 
             // btnConfirmarReserva
             // 
             this.btnConfirmarReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
@@ -428,165 +342,13 @@
             this.btnConfirmarReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarReserva.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnConfirmarReserva.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmarReserva.Location = new System.Drawing.Point(250, 105);
+            this.btnConfirmarReserva.Location = new System.Drawing.Point(295, 453);
             this.btnConfirmarReserva.Name = "btnConfirmarReserva";
-            this.btnConfirmarReserva.Size = new System.Drawing.Size(200, 35);
+            this.btnConfirmarReserva.Size = new System.Drawing.Size(243, 50);
             this.btnConfirmarReserva.TabIndex = 14;
             this.btnConfirmarReserva.Text = "CONFIRMAR RESERVA";
             this.btnConfirmarReserva.UseVisualStyleBackColor = false;
-            //this.btnConfirmarReserva.Click += new System.EventHandler(this.btnConfirmarReserva_Click_1);
-            // 
-            // lblDisponibilidad
-            // 
-            this.lblDisponibilidad.AutoSize = true;
-            this.lblDisponibilidad.Font = new System.Drawing.Font("Arial", 9F);
-            this.lblDisponibilidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblDisponibilidad.Location = new System.Drawing.Point(605, 57);
-            this.lblDisponibilidad.Name = "lblDisponibilidad";
-            this.lblDisponibilidad.Size = new System.Drawing.Size(132, 21);
-            this.lblDisponibilidad.TabIndex = 13;
-            this.lblDisponibilidad.Text = "[Disponibilidad]";
-            //this.lblDisponibilidad.Click += new System.EventHandler(this.lblDisponibilidad_Click);
-            // 
-            // lblDisponibilidadLabel
-            // 
-            this.lblDisponibilidadLabel.AutoSize = true;
-            this.lblDisponibilidadLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDisponibilidadLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblDisponibilidadLabel.Location = new System.Drawing.Point(538, 57);
-            this.lblDisponibilidadLabel.Name = "lblDisponibilidadLabel";
-            this.lblDisponibilidadLabel.Size = new System.Drawing.Size(73, 21);
-            this.lblDisponibilidadLabel.TabIndex = 12;
-            this.lblDisponibilidadLabel.Text = "Plazas:";
-            // 
-            // lblSalon
-            // 
-            this.lblSalon.AutoSize = true;
-            this.lblSalon.Font = new System.Drawing.Font("Arial", 9F);
-            this.lblSalon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblSalon.Location = new System.Drawing.Point(565, 27);
-            this.lblSalon.Name = "lblSalon";
-            this.lblSalon.Size = new System.Drawing.Size(66, 21);
-            this.lblSalon.TabIndex = 11;
-            this.lblSalon.Text = "[Salón]";
-            //this.lblSalon.Click += new System.EventHandler(this.lblSalon_Click);
-            // 
-            // lblSalonLabel
-            // 
-            this.lblSalonLabel.AutoSize = true;
-            this.lblSalonLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSalonLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblSalonLabel.Location = new System.Drawing.Point(505, 27);
-            this.lblSalonLabel.Name = "lblSalonLabel";
-            this.lblSalonLabel.Size = new System.Drawing.Size(54, 21);
-            this.lblSalonLabel.TabIndex = 10;
-            this.lblSalonLabel.Text = "Sala:";
-            // 
-            // lblDuracion
-            // 
-            this.lblDuracion.AutoSize = true;
-            this.lblDuracion.Font = new System.Drawing.Font("Arial", 9F);
-            this.lblDuracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblDuracion.Location = new System.Drawing.Point(450, 57);
-            this.lblDuracion.Name = "lblDuracion";
-            this.lblDuracion.Size = new System.Drawing.Size(92, 21);
-            this.lblDuracion.TabIndex = 9;
-            this.lblDuracion.Text = "[Duración]";
-            //this.lblDuracion.Click += new System.EventHandler(this.lblDuracion_Click);
-            // 
-            // lblDuracionLabel
-            // 
-            this.lblDuracionLabel.AutoSize = true;
-            this.lblDuracionLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDuracionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblDuracionLabel.Location = new System.Drawing.Point(364, 57);
-            this.lblDuracionLabel.Name = "lblDuracionLabel";
-            this.lblDuracionLabel.Size = new System.Drawing.Size(95, 21);
-            this.lblDuracionLabel.TabIndex = 8;
-            this.lblDuracionLabel.Text = "Duración:";
-            //this.lblDuracionLabel.Click += new System.EventHandler(this.lblDuracionLabel_Click);
-            // 
-            // lblHorario
-            // 
-            this.lblHorario.AutoSize = true;
-            this.lblHorario.Font = new System.Drawing.Font("Arial", 9F);
-            this.lblHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblHorario.Location = new System.Drawing.Point(270, 57);
-            this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(79, 21);
-            this.lblHorario.TabIndex = 7;
-            this.lblHorario.Text = "[Horario]";
-            //this.lblHorario.Click += new System.EventHandler(this.lblHorario_Click);
-            // 
-            // lblHorarioLabel
-            // 
-            this.lblHorarioLabel.AutoSize = true;
-            this.lblHorarioLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblHorarioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblHorarioLabel.Location = new System.Drawing.Point(216, 57);
-            this.lblHorarioLabel.Name = "lblHorarioLabel";
-            this.lblHorarioLabel.Size = new System.Drawing.Size(58, 21);
-            this.lblHorarioLabel.TabIndex = 6;
-            this.lblHorarioLabel.Text = "Hora:";
-            //this.lblHorarioLabel.Click += new System.EventHandler(this.lblHorarioLabel_Click);
-            // 
-            // lblEntrenador
-            // 
-            this.lblEntrenador.AutoSize = true;
-            this.lblEntrenador.Font = new System.Drawing.Font("Arial", 9F);
-            this.lblEntrenador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblEntrenador.Location = new System.Drawing.Point(380, 27);
-            this.lblEntrenador.Name = "lblEntrenador";
-            this.lblEntrenador.Size = new System.Drawing.Size(109, 21);
-            this.lblEntrenador.TabIndex = 5;
-            this.lblEntrenador.Text = "[Entrenador]";
-            //this.lblEntrenador.Click += new System.EventHandler(this.lblEntrenador_Click);
-            // 
-            // lblEntrenadorLabel
-            // 
-            this.lblEntrenadorLabel.AutoSize = true;
-            this.lblEntrenadorLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblEntrenadorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblEntrenadorLabel.Location = new System.Drawing.Point(270, 27);
-            this.lblEntrenadorLabel.Name = "lblEntrenadorLabel";
-            this.lblEntrenadorLabel.Size = new System.Drawing.Size(114, 21);
-            this.lblEntrenadorLabel.TabIndex = 4;
-            this.lblEntrenadorLabel.Text = "Entrenador:";
-            //this.lblEntrenadorLabel.Click += new System.EventHandler(this.lblEntrenadorLabel_Click);
-            // 
-            // lblClaseNombre
-            // 
-            this.lblClaseNombre.AutoSize = true;
-            this.lblClaseNombre.Font = new System.Drawing.Font("Arial", 9F);
-            this.lblClaseNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblClaseNombre.Location = new System.Drawing.Point(144, 39);
-            this.lblClaseNombre.Name = "lblClaseNombre";
-            this.lblClaseNombre.Size = new System.Drawing.Size(66, 21);
-            this.lblClaseNombre.TabIndex = 3;
-            this.lblClaseNombre.Text = "[Clase]";
-            //this.lblClaseNombre.Click += new System.EventHandler(this.lblClaseNombre_Click);
-            // 
-            // lblClaseNombreLabel
-            // 
-            this.lblClaseNombreLabel.AutoSize = true;
-            this.lblClaseNombreLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblClaseNombreLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblClaseNombreLabel.Location = new System.Drawing.Point(57, 39);
-            this.lblClaseNombreLabel.Name = "lblClaseNombreLabel";
-            this.lblClaseNombreLabel.Size = new System.Drawing.Size(92, 21);
-            this.lblClaseNombreLabel.TabIndex = 2;
-            this.lblClaseNombreLabel.Text = "Nombre: ";
-            // 
-            // lblDetalles
-            // 
-            this.lblDetalles.AutoSize = true;
-            this.lblDetalles.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDetalles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblDetalles.Location = new System.Drawing.Point(15, 10);
-            this.lblDetalles.Name = "lblDetalles";
-            this.lblDetalles.Size = new System.Drawing.Size(243, 29);
-            this.lblDetalles.TabIndex = 1;
-            this.lblDetalles.Text = "Detalles de la Clase:";
+            this.btnConfirmarReserva.Click += new System.EventHandler(this.btnConfirmarReserva_Click_1);
             // 
             // Reservas_Client
             // 
@@ -594,8 +356,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(800, 600);
-            this.Controls.Add(this.pnlDetallesClase);
             this.Controls.Add(this.lblClasesDisponibles);
+            this.Controls.Add(this.btnConfirmarReserva);
             this.Controls.Add(this.dgvClasesDisponibles);
             this.Controls.Add(this.panelFiltros);
             this.Controls.Add(this.lblTitulo);
@@ -609,8 +371,6 @@
             this.panelFiltros.ResumeLayout(false);
             this.panelFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasesDisponibles)).EndInit();
-            this.pnlDetallesClase.ResumeLayout(false);
-            this.pnlDetallesClase.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

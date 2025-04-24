@@ -16,7 +16,7 @@ namespace ReservaGimnasio.Capa_Presentación.Frm_Reservas
         {
             InitializeComponent();
             CargarCombos();
-            pnlDetallesClase.Visible = false;
+//pnlDetallesClase.Visible = false;
             btnConfirmarReserva.Enabled = false;
         }
 
@@ -76,16 +76,97 @@ namespace ReservaGimnasio.Capa_Presentación.Frm_Reservas
 
         }
 
-        private void dgvClasesDisponibles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+// Make sure this is inside your Reservas_Client class
+
+private void dgvClasesDisponibles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        // Check if the click is on a valid row (not the header)
+        if (e.RowIndex >= 0)
         {
-            if (e.RowIndex >= 0)
+            // Check if the click occurred in the 'btnReservar' column
+            // It's safer to check by column name than index, in case the order changes.
+            if (this.dgvClasesDisponibles.Columns[e.ColumnIndex].Name == "btnReservar")
             {
+                // Get the clicked row
                 DataGridViewRow fila = dgvClasesDisponibles.Rows[e.RowIndex];
-          
 
-                 
+                // --- Action to perform when the 'Reservar' button is clicked ---
+
+                // 1. Get the necessary information from the row.
+                //    Make sure to handle potential null values and convert types correctly.
+                //    Using 'ClaseID' which is likely the primary key for the class.
+                int claseId = -1; // Default/invalid value
+
+                // Safely try to parse the ClaseID
+                if (fila.Cells["ClaseID"].Value != null &&
+                    int.TryParse(fila.Cells["ClaseID"].Value.ToString(), out int parsedId))
+                {
+                    claseId = parsedId;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo obtener el ID de la clase seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Stop processing if ID is invalid
+                }
+
+                // You can also get other details if needed for confirmation or processing
+                string nombreClase = fila.Cells["NombreClase"].Value?.ToString() ?? "N/A";
+                string horario = fila.Cells["Horario"].Value?.ToString() ?? "N/A";
+                string entrenador = fila.Cells["Entrenador"].Value?.ToString() ?? "N/A";
+                // Add any other fields you might need...
+
+                // 2. Implement the reservation logic (or start the process)
+                //    For example, show a confirmation message:
+                DialogResult confirmResult = MessageBox.Show(
+                    $"¿Está seguro que desea reservar la clase '{nombreClase}' con {entrenador} a las {horario}?",
+                    "Confirmar Reserva",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // --- PLACEHOLDER: Add your actual reservation code here ---
+                    // This is where you would call a method to save the reservation
+                    // to your database or business logic layer, passing the claseId
+                    // and potentially the client's ID (which you might have stored elsewhere).
+                    // Example:
+                    // bool exito = GestorReservas.CrearReserva(this.clienteActualId, claseId);
+                    // if(exito) {
+                    //     MessageBox.Show("¡Clase reservada con éxito!", "Reserva Confirmada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //     // Optional: Refresh the grid to show updated availability
+                    //     CargarClasesDisponibles(); // Assuming you have a method like this
+                    // } else {
+                    //     MessageBox.Show("No se pudo completar la reserva. Intente nuevamente.", "Error de Reserva", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // }
+
+                    // For now, just show a message indicating the action would happen
+                    MessageBox.Show($"Acción: Reservar clase con ID: {claseId}\nNombre: {nombreClase}", "Reserva Iniciada (Simulación)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Potentially update UI, e.g., refresh the grid or disable the button
+                }
+                // else: User clicked No, do nothing.
             }
+            // Optional: Handle clicks on other cells if needed (e.g., selecting the row)
+            // else
+            // {
+            //     // Code to execute if a cell other than the button is clicked
+            //     // For example, maybe just ensure the row is selected
+            //     if (!dgvClasesDisponibles.Rows[e.RowIndex].Selected)
+            //     {
+            //        dgvClasesDisponibles.ClearSelection(); // Optional: clear previous selection
+            //        dgvClasesDisponibles.Rows[e.RowIndex].Selected = true;
+            //     }
+            // }
+        }
+    }
 
+    // --- Make sure you have declared the event handler in your Form's constructor ---
+    // or in the InitializeComponent method (which your designer file already does):
+    // this.dgvClasesDisponibles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesDisponibles_CellContentClick);
+
+    private void btnConfirmarReserva_Click_1(object sender, EventArgs e)
+        {
 
         }
     }
