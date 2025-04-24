@@ -41,14 +41,12 @@ namespace ReservaGimnasio.Capa_Presentación
                 return;
             }
 
-            // Realizar búsqueda por nombre
             dataGridGestionClases.DataSource = claseDAL.BuscarPorNombre(nombreBusqueda);
         }
 
         private void txtBuscarClase_TextChanged(object sender, EventArgs e)
         {
-            // Opcional: puedes implementar búsqueda automática mientras se escribe
-            // Si prefieres que la búsqueda sea solo con el botón, puedes dejar esto vacío
+            
         }
 
         private void BtnRefrescar_Click(object sender, EventArgs e)
@@ -112,10 +110,7 @@ namespace ReservaGimnasio.Capa_Presentación
 
                 if (saveDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Aquí iría el código para exportar a Excel
-                    // Puedes usar bibliotecas como EPPlus, ClosedXML o Microsoft.Office.Interop.Excel
-
-                    // Por ahora, mostraremos un mensaje indicando que se implementaría la exportación
+                   
                     MessageBox.Show($"Se exportaría a: {saveDialog.FileName}\nFuncionalidad no implementada completamente",
                         "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -129,8 +124,8 @@ namespace ReservaGimnasio.Capa_Presentación
 
         private void dataGridGestionClases_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Este evento se dispara cuando se hace clic en una celda
-            // Puedes usarlo para mostrar detalles adicionales o seleccionar la fila completa
+            
+            
         }
     }
 }

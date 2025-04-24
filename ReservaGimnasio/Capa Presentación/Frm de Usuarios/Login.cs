@@ -87,7 +87,7 @@ namespace ReservaGimnasio
             string correo = textCorreo.Text;
             string contraseña = textContraseña.Text;
 
-            // Evita enviar "CORREO" o "Contraseña" como valores reales si el usuario no interactuó
+            
             if (correo == "CORREO" || contraseña == "Contraseña")
             {
                 MessageBox.Show("Por favor, ingrese su correo y contraseña.", "Datos Faltantes", MessageBoxButtons.OK, Warning);
@@ -96,25 +96,25 @@ namespace ReservaGimnasio
 
 
             UsuariosBL usuarioBL = new UsuariosBL();
-            DataTable dt = null; // Inicializar a null
+            DataTable dt = null; 
 
-            try // Es buena práctica envolver la llamada a BL/DAL en try-catch
+            try 
             {
                 dt = usuarioBL.ValidarLogin(correo, contraseña);
             }
-            catch (ArgumentException aex) // Captura validaciones de BL
+            catch (ArgumentException aex) 
             {
                 MessageBox.Show(aex.Message, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // No continuar si la validación falla
+                return; 
             }
-            catch (Exception ex) // Captura otros errores (BD, etc.)
+            catch (Exception ex) 
             {
                 MessageBox.Show($"Ocurrió un error al intentar iniciar sesión: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // No continuar
+                return; 
             }
 
 
-            if (dt != null && dt.Rows.Count > 0) // Verificar que dt no sea null y tenga filas
+            if (dt != null && dt.Rows.Count > 0) 
             {
                 //MessageBox.Show("Bienvenido!", "Login Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information); // Puedes quitarlo si la redirección es suficiente
 

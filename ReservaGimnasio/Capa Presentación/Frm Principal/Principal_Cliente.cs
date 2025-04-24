@@ -48,24 +48,23 @@ namespace Principal
         private void btnRegistrarUsuario_Click(object sender, EventArgs e)
         {
             openChildForm(new Reservas_Client());
-            //your codes
-            //..
+           
+            
             hideSubMenu();
         }
 
         private void btnGestionarUsuarios_Click(object sender, EventArgs e)
         {
             openChildForm(new Gestion_Usuarios());
-            //your codes
-            //..
+           
+            
             hideSubMenu();
         }
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+           
+            
             hideSubMenu();
         }
 
@@ -81,25 +80,21 @@ namespace Principal
 
         private void btnAgregarClase_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+           
+            
             hideSubMenu();
         }
 
         private void btnGestionarClases_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+           
+            
             hideSubMenu();
         }
 
         private void btnHorarios_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+           
             hideSubMenu();
         }
 

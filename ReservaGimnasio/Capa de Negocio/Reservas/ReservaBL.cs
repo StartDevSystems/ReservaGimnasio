@@ -12,14 +12,10 @@ namespace ReservaGimnasio.Capa_de_Negocio
     class ReservaBL
     {
         private ReservaDAL reservaDAL = new ReservaDAL();
-        private ClaseDAL claseDAL = new ClaseDAL(); // Necesitamos esto para obtener la capacidad
+        private ClaseDAL claseDAL = new ClaseDAL(); 
 
-        /// <summary>
-        /// Valida y guarda una reserva.
-        /// </summary>
-        /// <param name="reserva">La reserva a guardar.</param>
-        /// <returns>True si la reserva se guardó con éxito.</returns>
-        /// <exception cref="Exception">Lanza excepciones con mensajes de validación o error.</exception>
+        
+        
         public bool GuardarReserva(ReservaEnti reserva)
         {
             // 1. Validaciones básicas de la entidad
@@ -37,10 +33,10 @@ namespace ReservaGimnasio.Capa_de_Negocio
                 reserva.FechaRegistroActual = DateTime.Now; // Asignar fecha de creación
 
             // 2. Validación de Negocio: Verificar Cupo
-            int capacidadMaxima = claseDAL.ObtenerCapacidadClase(reserva.IdClase); // ¡ASEGÚRATE QUE ESTE MÉTODO EXISTA EN ClaseDAL!
+            int capacidadMaxima = claseDAL.ObtenerCapacidadClase(reserva.IdClase); 
             if (capacidadMaxima <= 0)
             {
-                // Podría ser un error de configuración de la clase, o clase no encontrada
+              
                 throw new Exception($"No se pudo obtener una capacidad válida para la clase seleccionada (ID: {reserva.IdClase}).");
             }
 
@@ -51,26 +47,18 @@ namespace ReservaGimnasio.Capa_de_Negocio
                 throw new Exception($"No hay cupo disponible para la clase '{reserva.IdClase}' en la fecha y hora seleccionadas ({reserva.FechaClase.ToShortDateString()} {reserva.Horario}). Cupo: {reservasActuales}/{capacidadMaxima}");
             }
 
-            // 3. (Opcional) Validación adicional: ¿Cliente ya tiene reserva a esa hora?
-            // bool clienteYaReservado = reservaDAL.VerificarReservaCliente(reserva.NombreCliente, reserva.FechaReserva, reserva.HoraReserva);
-            // if (clienteYaReservado)
-            // {
-            //     throw new Exception($"El cliente '{reserva.NombreCliente}' ya tiene una reserva para esa fecha y hora.");
-            // }
-
-
-            // 4. Si todo está bien, intentar guardar
+           
             bool exito = reservaDAL.GuardarReserva(reserva);
             if (!exito)
             {
-                // El DAL ya debería haber mostrado un MessageBox, pero podemos lanzar excepción si preferimos manejarlo en la UI
+               
                 throw new Exception("Ocurrió un error al intentar guardar la reserva en la base de datos.");
             }
 
             return exito; // Devuelve true si se guardó
         }
 
-        // Podrías añadir más métodos aquí: CancelarReserva, ModificarReserva, ListarReservasCliente, etc.
+       
     }
 }
 
