@@ -21,24 +21,10 @@ namespace ReservaGimnasio.Capa_Presentación.Frm_Reservas
         }
 
         private void CargarCombos()
-<<<<<<< Updated upstream
         {
             var listaDias = new List<string>(new[] { "Lunes, Martes, Miercoles, Jueves, Viernes" }).ToArray();
-            var listadoEntrenadores = new List<string> (new[] { "Rocky Balboa", "El Depredador", "Jose Luis", "Castor Troy", "John Clements", "Jonathan travolta", "Yordi el NiñoP" }).ToArray();
+            var listadoEntrenadores = new List<string>(new[] { "Rocky Balboa", "El Depredador", "Jose Luis", "Castor Troy", "John Clements", "Jonathan travolta", "Yordi el NiñoP" }).ToArray();
             var listadoArea = new List<string>( new[] { "CrossFit", "HIIT (High-Intensity Interval Training", "Circuitos, Pesas libres", "Máquinas de musculación", "Powerlifting", "Spinning", "Step aeróbico", "Caminadora", "Elípticas" }).ToArray();
-
-            cmbEntrenador.Items.AddRange(listadoEntrenadores);
-            cmbTipoClase.Items.AddRange(listadoArea);
-        }
-        private void Reservas_Client_Load(object sender, EventArgs e)
-        {
-            CargarClasesDisponibles();
-            
-=======
-        {
-            var listaDias = new[] { "Lunes, Martes, Miercoles, Jueves, Viernes" }.ToArray();
-            var listadoEntrenadores = new[] { "Rocky Balboa", "El Depredador", "Jose Luis", "Castor Troy", "John Clements", "Jonathan travolta", "Yordi el NiñoP" }.ToArray();
-            var listadoArea = new[] { "CrossFit", "HIIT (High-Intensity Interval Training", "Circuitos, Pesas libres", "Máquinas de musculación", "Powerlifting", "Spinning", "Step aeróbico", "Caminadora", "Elípticas" }.ToArray();
 
             cmbDia.Items.AddRange(listaDias);
             cmbEntrenador.Items.AddRange(listadoEntrenadores);
@@ -51,7 +37,6 @@ namespace ReservaGimnasio.Capa_Presentación.Frm_Reservas
         {
             CargarClasesDisponibles();
           
->>>>>>> Stashed changes
 
         }
 
